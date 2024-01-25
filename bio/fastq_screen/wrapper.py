@@ -34,7 +34,7 @@ else:
 
 # fastq_screen hard-codes filenames according to this prefix. We will send
 # hard-coded output to a temp dir, and then move them later.
-prefix = re.split("\\.fastq$|\\.fq$|\\.txt$|\\.seq$", os.path.basename(snakemake.input[0]))[0]
+prefix = re.split("\\.fastq|\\.fq|\\.txt|\\.seq", os.path.basename(snakemake.input[0]))[0]
 
 tempdir = tempfile.mkdtemp()
 
